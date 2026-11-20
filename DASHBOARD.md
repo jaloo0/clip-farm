@@ -24,3 +24,14 @@ The token needs repository access to **Contents**, **Actions**, and **Releases**
 4. Open the Actions run or the source Release from the success screen.
 
 The dashboard creates a tagged Release, uploads the MP4/job pairs, and dispatches the existing `render.yml` workflow.
+
+## Local test folder
+
+Place a test MP4 and its matching `.job.json` in `test_clips/`, then run:
+
+```bash
+python3 -m pip install -r render/requirements.txt
+python3 render/render_cli.py test_clips test_clips/output --layout auto
+```
+
+Use only a small sample clip here; GitHub Actions can download it for testing, and normal dashboard batches do not use this folder.
